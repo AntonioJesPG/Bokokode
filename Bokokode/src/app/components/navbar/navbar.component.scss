@@ -1,0 +1,61 @@
+.nav{
+    margin-top: 2%;
+    justify-content: space-between;
+}
+
+hr.solid {
+    border-top: 3px solid #bbb;
+  }
+
+  .fa-stack{
+    height: 0;
+  }
+
+.fa-stack:after{
+    position:absolute;
+    font-size:30%;
+    padding:.6em;
+    border-radius:999px;
+    line-height:.75em;
+    color: white;
+    background:rgba(0,0,0);
+  }
+
+  .dropdown-toggle a:hover{
+    color: black;
+    color: black;
+  }
+
+  .cart-image{
+    width: 100px !important;
+    height: 100px !important;
+  }
+
+  .menu-item{
+    display:flex;
+    align-items: stretch;
+    width: 200x !important;
+    padding: 5px;
+  }
+
+  .clear-bt{
+    margin-left: 5%;
+    width: 90% !important;
+    background-color: white;
+  }
+
+  a{
+    color:black;
+  }
+
+  @media only screen and (max-width: 420px) {
+    hr.solid{
+        width: 100% !important;
+        margin-left: 1%;
+    }
+
+    .nav{
+        margin-left: 20px;
+    }
+
+}

@@ -1,0 +1,15 @@
+
+<div class="also-buy">
+    <h2 class="also-buy-h2">People also buy</h2>
+    <div class="also-buy-box">
+        <div *ngFor="let product of p.people_also_buy" class="product">
+            <div class="photo">
+                <img class="also-buy-img" mat-card-image src={{product.image.src}} alt={{product.image.alt}}>
+                <button (click)="addToCart(product)" class="photo-button">ADD TO CART</button>
+            </div>
+                <p class="grey">{{product.category}}</p>
+                <p class="bold">{{product.name}}</p>
+                <p class="grey">{{product.price}} {{product.currency}}</p>
+        </div>
+    </div>
+</div>

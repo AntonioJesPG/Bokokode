@@ -1,0 +1,30 @@
+<div class="container">
+<mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title class="bold title">{{featured.name}}</mat-card-title>
+      <div class="image-container mobile">
+        <img mat-card-image src={{featured.image.src}} alt={{featured.image.alt}}>
+        <div class="photo-tag">Photo of the day</div>
+      </div>
+      <button class="buy-button" (click)="addToCart(featured)">ADD TO CART</button>
+    </mat-card-header>
+    <div class="image-container rest">
+      <img mat-card-image src={{featured.image.src}} alt={{featured.image.alt}}>
+      <div class="photo-tag">Photo of the day</div>
+    </div>
+    <mat-card-content class="content">
+      <div class="test">
+        <div class="c">
+        <h3 class="bold title ">About the {{featured.name}}</h3>
+        <mat-card-subtitle class="category">{{featured.category}}</mat-card-subtitle>
+      <p class="grey">
+        {{featured.description}}
+      </p>
+      </div>
+      <app-also-buy></app-also-buy>
+    </div>
+    </mat-card-content>
+  </mat-card>
+  
+<hr class="solid">
+</div>

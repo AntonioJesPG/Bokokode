@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="nav">
+
+  <h1 class="title">Bokokode</h1>
+
+    <ng-container>
+      <div class="dropdown">
+        <a mat-button [matMenuTriggerFor]="menu">
+        <span class="fa-stack fa-2xl" >{{cartCount}}
+          <fa-icon class="nav-icon" [icon]="faCart"></fa-icon>
+        </span>
+        </a>
+      <mat-menu #menu="matMenu" class="menu">
+        <div *ngFor="let cartLine of cart" class="menu-item">
+          <div class="cart-data">
+              <p class="bold">{{cartLine.name}}</p>
+              <p>{{cartLine.price}}{{cartLine.currency}}</p>
+          </div>
+            <img class="cart-image"  src={{cartLine.image.src}} alt={{cartLine.image.alt}}>
+        </div>
+        <hr class="solid">
+        <button class="clear-bt" (click)="clearCart()">CLEAR</button>
+      </mat-menu>
+      </div>
+      </ng-container>
+
+  </div>
+
+
+  <hr class="solid">
+</div>

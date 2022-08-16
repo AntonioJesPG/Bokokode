@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="product-header">
+        <h1> Photography / <span class="gray">Premium Photos</span></h1>
+
+        <div class="dropdown">
+            <p class="gray">Sort By</p>
+            <p class="sort-button bold" (click)="sortBy('price','ASC')" *ngIf="type =='DES' || type == undefined || type == null">Price ^</p>
+            <p class="sort-button bold" (click)="sortBy('price','DES')" *ngIf="type =='ASC'">Price ˇ</p>
+        </div>
+    </div>
+    <div class="product-list">
+        <div class="filters">
+        <p class="bold">Category</p>
+            <div class="form-check" *ngFor="let filter of AllFilters">
+                <input class="form-check-input" type="checkbox" value="" (change)="updateFilter(filter)" *ngIf="checked(filter)"  checked>
+                <input class="form-check-input" type="checkbox" value="" (change)="updateFilter(filter)" *ngIf="!checked(filter)" >
+                <label class="form-check-label" for="flexCheckDefault">
+                {{filter}}
+            </label>
+            </div>
+        </div>  
+
+
+    <div class="products">
+        <div class="product" *ngFor="let p of products">
+                <div class="photo">
+                    <p *ngIf="p.bestseller" class="photo-tag text-small">Best Seller</p>
+                    <img mat-card-image class="photo-image" src={{p.image.src}} alt={{p.image.alt}}>
+                    <button (click)="addToCart(p)" class="photo-button">ADD TO CART</button>
+                </div>
+                <div class="text-box">
+                    <h4 class="gray text-small">{{p.category}}</h4>
+                    <h2 class="bold text-small">{{p.name}}</h2>
+                    <h3 class="gray text-small">{{p.price}}{{p.currency}}</h3>
+                </div>
+    </div>
+</div>
+
+</div>
+
+    <div class="pagination-container gray">
+        <a class="active bold" *ngIf="actualPage > 1" (click)="goToPage(actualPage - 1)">&lt;</a>
+        
+
+        <a *ngIf="actualPage - 2 >= 1" (click)="goToPage(actualPage - 2)">{{actualPage - 2 }}</a>
+        <a *ngIf="actualPage - 1 >= 1" (click)="goToPage(actualPage - 1)">{{actualPage - 1 }}</a>
+        <a class="active bold">{{actualPage}}</a>
+        <a *ngIf="actualPage + 1 <= lastPage" (click)="goToPage(actualPage + 1)">{{actualPage + 1 }}</a>
+        <a *ngIf="actualPage + 2 <= lastPage" (click)="goToPage(actualPage + 2)">{{actualPage +2 }}</a>
+
+        <a class="active bold" *ngIf="actualPage < lastPage" (click)="goToPage(actualPage + 1)">&gt;</a>
+        <a *ngIf="actualPage >= lastPage" disabled>&lt;</a>
+    </div>
+</div>
+
